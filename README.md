@@ -1,2 +1,7 @@
-# DIO-desafio-github
-Desafio de projeto sobre Git/GitHub
+# Bootcamp Cognizant Java Developer :computer:
+
+### Digital Inovation One
+
+Repositório com o conteúdo desenvolvido durante o bootcamp.
+
+- Introdução ao Git, GitHub e linguagem Markdown (Livro de receitas)
