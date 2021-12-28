@@ -1,4 +1,4 @@
-package com.metodos.exercicio1;
+package com.metodos;
 
 public class Quadrilatero {
 

@@ -1,10 +1,5 @@
 package com.metodos;
 
-import com.metodos.exercicio1.Calculadora;
-import com.metodos.exercicio1.Emprestimo;
-import com.metodos.exercicio1.Mensagem;
-import com.metodos.exercicio1.Quadrilatero;
-
 import java.util.Scanner;
 
 public class Main {
