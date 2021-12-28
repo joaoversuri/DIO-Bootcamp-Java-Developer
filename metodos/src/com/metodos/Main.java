@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int opcao;
         Scanner scan = new Scanner(System.in);
         inicio:while (true) {
             System.out.println("Escolha uma opção:");
@@ -13,43 +12,45 @@ public class Main {
             System.out.println("2 - Horário");
             System.out.println("3 - Simular emprestimo");
             System.out.println("4 - Área do quadrilatero");
-            System.out.println("5 - Encerrar aplicação");
-            opcao = scan.nextInt();
+            System.out.println("Q - Encerrar aplicação");
+            String opcao = scan.next();
             switch (opcao) {
-                case 1 -> {
+                case "1" -> {
                     // Calculadora
                     System.out.println("Exercício calculadora");
+                    System.out.println("Digite 2 números e selecione a operação a ser realizada");
+                    System.out.println();
                     calculadora:while(true) {
+                        System.out.println("Digite o primeiro valor:");
+                        double numero1= scan.nextDouble();
+                        System.out.println("Digite o segundo valor:");
+                        double numero2= scan.nextDouble();
                         System.out.println("Selecione a operação:");
                         System.out.println("1 - Adição");
                         System.out.println("2 - Subtração");
                         System.out.println("3 - Multiplicação");
                         System.out.println("4 - Divisão");
-                        System.out.println("5 - Retornar ao menu anterior");
-                        int operacao = scan.nextInt();
-                        System.out.println("Digite o primeiro valor:");
-                        double numero1= scan.nextDouble();
-                        System.out.println("Digite o segundo valor:");
-                        double numero2= scan.nextDouble();
+                        System.out.println("R - Retornar ao menu anterior");
+                        String operacao = scan.next();
                         System.out.println();
                         switch (operacao) {
-                            case 1 -> {
+                            case "1" -> {
                                 Calculadora.soma(numero1, numero2);
                                 break calculadora;
                             }
-                            case 2 -> {
+                            case "2" -> {
                                 Calculadora.subtracao(numero1, numero2);
                                 break calculadora;
                             }
-                            case 3 -> {
+                            case "3" -> {
                                 Calculadora.multiplicacao(numero1, numero2);
                                 break calculadora;
                             }
-                            case 4 -> {
+                            case "4" -> {
                                 Calculadora.divisao(numero1, numero2);
                                 break calculadora;
                             }
-                            case 5 ->{
+                            case "R","r" ->{
                                 break calculadora;
                             }
                             default -> System.out.println("Seleção inválida");
@@ -57,14 +58,14 @@ public class Main {
                     }
                     System.out.println();
                 }
-                case 2 -> {
+                case "2" -> {
                     // Mensagem
                     System.out.println("Exercício mensagem");
                     System.out.println();
                     Mensagem.obterMensagem();
                     System.out.println();
                 }
-                case 3 -> {
+                case "3" -> {
                     // Empréstimo
                     double valorUsuario;
                     int parcelas;
@@ -77,7 +78,7 @@ public class Main {
                     Emprestimo.calcular(valorUsuario, parcelas);
                     System.out.println();
                 }
-                case 4 -> {
+                case "4" -> {
                     // Área quadrilatero
                     System.out.println("Exercício quadrilátero");
                     quadrilatero:while(true){
@@ -86,10 +87,10 @@ public class Main {
                         System.out.println("2 - Retângulo");
                         System.out.println("3 - Trapézio");
                         System.out.println("4 - Losango");
-                        System.out.println("5 - Retornar ao menu anterior");
-                        int opcaoQuad = scan.nextInt();
+                        System.out.println("R - Retornar ao menu anterior");
+                        String opcaoQuad = scan.next();
                         switch (opcaoQuad) {
-                            case 1 -> {
+                            case "1" -> {
                                 double lado;
                                 System.out.println("Digite o valor do lado do quadrado: ");
                                 lado = scan.nextDouble();
@@ -98,7 +99,7 @@ public class Main {
                                 System.out.println("Área do quadrado: "+areaQuadrado);
                                 System.out.println();
                             }
-                            case 2 -> {
+                            case "2" -> {
                                 double lado1, lado2;
                                 System.out.println("Digite o valor do primeiro lado do retangulo: ");
                                 lado1 = scan.nextDouble();
@@ -109,7 +110,7 @@ public class Main {
                                 System.out.println("Área do retângulo:" + areaRetangulo);
                                 System.out.println();
                             }
-                            case 3 -> {
+                            case "3" -> {
                                 double baseMaior, baseMenor, altura;
                                 System.out.println("Digite o valor da base maior do trapézio: ");
                                 baseMaior = scan.nextDouble();
@@ -122,7 +123,7 @@ public class Main {
                                 System.out.println("Área do trapézio:" + areaTrapezio);
                                 System.out.println();
                             }
-                            case 4 -> {
+                            case "4" -> {
                                 float diagonal1, diagonal2;
                                 System.out.println("Digite o valor da primeira diagonal do losango: ");
                                 diagonal1 = scan.nextFloat();
@@ -133,7 +134,7 @@ public class Main {
                                 System.out.println("Área do losango:" + areaLosango);
                                 System.out.println();
                             }
-                            case 5 ->{
+                            case "R","r" ->{
                                 break quadrilatero;
                             }
                             default -> {
@@ -142,11 +143,9 @@ public class Main {
                                 System.out.println();
                             }
                         }
-
                     }
-
                 }
-                case 5 -> {
+                case "Q","q" -> {
                     System.out.println("Encerrando aplicação...");
                     break inicio;
                 }
