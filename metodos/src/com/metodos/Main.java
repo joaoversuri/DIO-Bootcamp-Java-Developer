@@ -15,8 +15,8 @@ public class Main {
             System.out.println("Q - Encerrar aplicação");
             String opcao = scan.next();
             switch (opcao) {
+                // Calculadora
                 case "1" -> {
-                    // Calculadora
                     System.out.println("Exercício calculadora");
                     System.out.println("Digite 2 números e selecione a operação a ser realizada");
                     System.out.println();
@@ -58,15 +58,15 @@ public class Main {
                     }
                     System.out.println();
                 }
+                // Mensagem
                 case "2" -> {
-                    // Mensagem
                     System.out.println("Exercício mensagem");
                     System.out.println();
                     Mensagem.obterMensagem();
                     System.out.println();
                 }
+                // Empréstimo
                 case "3" -> {
-                    // Empréstimo
                     double valorUsuario;
                     int parcelas;
                     System.out.println("Exercício empréstimo");
@@ -78,8 +78,8 @@ public class Main {
                     Emprestimo.calcular(valorUsuario, parcelas);
                     System.out.println();
                 }
+                // Área quadrilatero
                 case "4" -> {
-                    // Área quadrilatero
                     System.out.println("Exercício quadrilátero");
                     quadrilatero:while(true){
                         System.out.println("Selecione a forma geométrica cuja área será calculada: ");
@@ -90,6 +90,7 @@ public class Main {
                         System.out.println("R - Retornar ao menu anterior");
                         String opcaoQuad = scan.next();
                         switch (opcaoQuad) {
+                            //Quadrado
                             case "1" -> {
                                 double lado;
                                 System.out.println("Digite o valor do lado do quadrado: ");
@@ -99,6 +100,7 @@ public class Main {
                                 System.out.println("Área do quadrado: "+areaQuadrado);
                                 System.out.println();
                             }
+                            //Retangulo
                             case "2" -> {
                                 double lado1, lado2;
                                 System.out.println("Digite o valor do primeiro lado do retangulo: ");
@@ -110,6 +112,7 @@ public class Main {
                                 System.out.println("Área do retângulo:" + areaRetangulo);
                                 System.out.println();
                             }
+                            //Trapézio
                             case "3" -> {
                                 double baseMaior, baseMenor, altura;
                                 System.out.println("Digite o valor da base maior do trapézio: ");
@@ -123,6 +126,7 @@ public class Main {
                                 System.out.println("Área do trapézio:" + areaTrapezio);
                                 System.out.println();
                             }
+                            //Losango
                             case "4" -> {
                                 float diagonal1, diagonal2;
                                 System.out.println("Digite o valor da primeira diagonal do losango: ");
@@ -134,9 +138,11 @@ public class Main {
                                 System.out.println("Área do losango:" + areaLosango);
                                 System.out.println();
                             }
+                            //Retornar
                             case "R","r" ->{
                                 break quadrilatero;
                             }
+                            //Default -Opção invalida - Quadrilatero
                             default -> {
                                 System.out.println();
                                 System.out.println("Opção inválida");
@@ -145,10 +151,12 @@ public class Main {
                         }
                     }
                 }
+                //Encerrar aplicação
                 case "Q","q" -> {
                     System.out.println("Encerrando aplicação...");
                     break inicio;
                 }
+                //Default - Opção invalida
                 default -> System.out.println("Opção inválida.");
             }
         }
